@@ -1,50 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Obat</title>
+
     <style>
         body {
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
         }
+
         h1 {
             text-align: center;
             color: #2c3e50;
+            margin-top: 20px;
         }
+
         table {
             width: 80%;
-            margin: auto;
+            margin: 30px auto;
             border-collapse: collapse;
             background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
+
         th, td {
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ddd;
             text-align: center;
         }
+
         th {
             background-color: #3498db;
             color: white;
         }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
     </style>
 </head>
+
 <body>
 
 <h1>Data Obat</h1>
 
 <table>
-    <tr>
-        <th>ID Obat</th>
-        <th>Nama Obat</th>
-        <th>Harga</th>
-        <th>Stok</th>
-    </tr>
-    <tr>
-        <td>001</td>
-        <td>Paracetamol</td>
-        <td>5000</td>
-        <td>100</td>
-    </tr>
+    <thead>
+        <tr>
+            <th>ID Obat</th>
+            <th>Nama Obat</th>
+            <th>Harga</th>
+            <th>Stok</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>001</td>
+            <td>Paracetamol</td>
+            <td>Rp 5.000</td>
+            <td>100</td>
+        </tr>
+    </tbody>
 </table>
 
 </body>

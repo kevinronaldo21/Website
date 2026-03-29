@@ -1,1 +1,106 @@
-<html><body><h1>Apotek Karya Husada - Home</h1></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Obat</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f6f9;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+        button {
+            padding: 8px 12px;
+            background: #2ecc71;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button.delete {
+            background: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Data Obat</h1>
+
+<div class="container">
+
+    <!-- Form Input -->
+    <input type="text" id="id" placeholder="ID Obat">
+    <input type="text" id="nama" placeholder="Nama Obat">
+    <input type="number" id="harga" placeholder="Harga">
+    <input type="number" id="stok" placeholder="Stok">
+    <button onclick="tambahData()">Tambah</button>
+
+    <!-- Tabel -->
+    <table id="tabelObat">
+        <tr>
+            <th>ID Obat</th>
+            <th>Nama Obat</th>
+            <th>Harga</th>
+            <th>Stok</th>
+            <th>Aksi</th>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+function tambahData() {
+    let id = document.getElementById("id").value;
+    let nama = document.getElementById("nama").value;
+    let harga = document.getElementById("harga").value;
+    let stok = document.getElementById("stok").value;
+
+    let tabel = document.getElementById("tabelObat");
+    let row = tabel.insertRow();
+
+    row.insertCell(0).innerHTML = id;
+    row.insertCell(1).innerHTML = nama;
+    row.insertCell(2).innerHTML = harga;
+    row.insertCell(3).innerHTML = stok;
+    row.insertCell(4).innerHTML = 
+        '<button class="delete" onclick="hapusData(this)">Hapus</button>';
+
+    // reset input
+    document.getElementById("id").value = "";
+    document.getElementById("nama").value = "";
+    document.getElementById("harga").value = "";
+    document.getElementById("stok").value = "";
+}
+
+function hapusData(btn) {
+    let row = btn.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+}
+</script>
+
+</body>
+</html>
